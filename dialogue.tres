@@ -1,0 +1,194 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/saywhat_godot/dialogue_resource.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+lines = {
+"00db5154-4eae-41b1-84ae-b12d79faf060": {
+"id": "00db5154-4eae-41b1-84ae-b12d79faf060",
+"responses": [ {
+"condition": "last_saw != dialogue",
+"next_node_id": "e09e507a-834b-45f9-8bc0-3c46ed1b1361",
+"prompt": "Dialogue"
+}, {
+"condition": "last_saw != conditions",
+"next_node_id": "4d8ec79e-ec51-42b6-93c5-05cde45f2c1a",
+"prompt": "Conditions"
+}, {
+"condition": "last_saw != mutations",
+"next_node_id": "1519dd2e-7ae7-434f-9839-aa63412f1bcd",
+"prompt": "Mutations"
+}, {
+"condition": "last_saw != options",
+"next_node_id": "d56d2df9-ce34-4552-b4b8-11bb5b65bb2d",
+"prompt": "Response options"
+}, {
+"next_node_id": "",
+"prompt": "Nothing, thanks"
+} ],
+"type": "responses"
+},
+"0ab768f2-9ea3-4b38-b0ac-30d0a9c87334": {
+"character": "Nathan",
+"dialogue": "Conditions can be simple property value checks or run boolean functions on the provided \"game state\" object.",
+"go_to_node_id": "",
+"id": "0ab768f2-9ea3-4b38-b0ac-30d0a9c87334",
+"next_node_id": "80b2d563-ae17-4ceb-9707-2c959b9e52b0",
+"type": "dialogue"
+},
+"0bd501d5-3ad8-4d89-8604-5ae31e2fa5be": {
+"character": "Nathan",
+"dialogue": "Mutations can be simple values or run functions. For example, Coco, sit!",
+"go_to_node_id": "",
+"id": "0bd501d5-3ad8-4d89-8604-5ae31e2fa5be",
+"next_node_id": "1df2b555-1821-4434-8d1d-8b2bc9228440",
+"type": "dialogue"
+},
+"1519dd2e-7ae7-434f-9839-aa63412f1bcd": {
+"go_to_node_id": "",
+"id": "1519dd2e-7ae7-434f-9839-aa63412f1bcd",
+"mutation": "last_saw = mutations",
+"next_node_id": "45841b0c-71ae-4954-86e1-ff563ed722d2",
+"type": "mutation"
+},
+"1df2b555-1821-4434-8d1d-8b2bc9228440": {
+"go_to_node_id": "",
+"id": "1df2b555-1821-4434-8d1d-8b2bc9228440",
+"mutation": "coco_sit",
+"next_node_id": "3ea21fd1-1e1e-4c66-9294-ba02a9179c0f",
+"type": "mutation"
+},
+"32f52e69-fa4b-42b7-a005-4bcf4132ecbf": {
+"id": "32f52e69-fa4b-42b7-a005-4bcf4132ecbf",
+"responses": [ {
+"next_node_id": "33e17efd-5582-48be-85de-af456fbf1777",
+"prompt": ""
+} ],
+"type": "responses"
+},
+"33e17efd-5582-48be-85de-af456fbf1777": {
+"character": "Nathan",
+"condition": "!has_seen_intro",
+"dialogue": "Hello! This is an example of how to use the SayWhat addon for Godot.",
+"go_to_node_id": "",
+"id": "33e17efd-5582-48be-85de-af456fbf1777",
+"next_node_id": "50842542-6e6a-497d-a9fd-fdca231ea738",
+"type": "dialogue"
+},
+"3ea21fd1-1e1e-4c66-9294-ba02a9179c0f": {
+"character": "Nathan",
+"dialogue": "That was an example mutation.",
+"go_to_node_id": "",
+"id": "3ea21fd1-1e1e-4c66-9294-ba02a9179c0f",
+"next_node_id": "a960a734-6249-44b1-92a3-8603673703b6",
+"type": "dialogue"
+},
+"45841b0c-71ae-4954-86e1-ff563ed722d2": {
+"character": "Nathan",
+"dialogue": "Mutations are used to set game state values or perform actions outside of showing dialogue.",
+"go_to_node_id": "",
+"id": "45841b0c-71ae-4954-86e1-ff563ed722d2",
+"next_node_id": "0bd501d5-3ad8-4d89-8604-5ae31e2fa5be",
+"type": "dialogue"
+},
+"4d8ec79e-ec51-42b6-93c5-05cde45f2c1a": {
+"go_to_node_id": "",
+"id": "4d8ec79e-ec51-42b6-93c5-05cde45f2c1a",
+"mutation": "last_saw = conditions",
+"next_node_id": "0ab768f2-9ea3-4b38-b0ac-30d0a9c87334",
+"type": "mutation"
+},
+"50842542-6e6a-497d-a9fd-fdca231ea738": {
+"go_to_node_id": "",
+"id": "50842542-6e6a-497d-a9fd-fdca231ea738",
+"mutation": "has_seen_intro = true",
+"next_node_id": "7aa8756a-2647-4e66-baa8-1313d3378cc5",
+"type": "mutation"
+},
+"7aa8756a-2647-4e66-baa8-1313d3378cc5": {
+"character": "Nathan",
+"dialogue": "What would you like to know about?",
+"go_to_node_id": "",
+"id": "7aa8756a-2647-4e66-baa8-1313d3378cc5",
+"next_node_id": "00db5154-4eae-41b1-84ae-b12d79faf060",
+"type": "dialogue"
+},
+"80a45706-2be9-41fc-b152-34e9feb3388c": {
+"character": "Nathan",
+"dialogue": "Dialogue can be preceded with a condition.",
+"go_to_node_id": "",
+"id": "80a45706-2be9-41fc-b152-34e9feb3388c",
+"next_node_id": "32f52e69-fa4b-42b7-a005-4bcf4132ecbf",
+"type": "dialogue"
+},
+"80b2d563-ae17-4ceb-9707-2c959b9e52b0": {
+"id": "80b2d563-ae17-4ceb-9707-2c959b9e52b0",
+"responses": [ {
+"next_node_id": "33e17efd-5582-48be-85de-af456fbf1777",
+"prompt": ""
+} ],
+"type": "responses"
+},
+"8954b340-054c-4b1f-979a-c13c711b70c6": {
+"character": "Nathan",
+"dialogue": "Dialogue is a line starting with a character's name followed by a colon and then what they say.",
+"go_to_node_id": "",
+"id": "8954b340-054c-4b1f-979a-c13c711b70c6",
+"next_node_id": "80a45706-2be9-41fc-b152-34e9feb3388c",
+"type": "dialogue"
+},
+"948ea8bd-32d7-4fa4-b0e8-fe7870f06622": {
+"id": "948ea8bd-32d7-4fa4-b0e8-fe7870f06622",
+"responses": [ {
+"next_node_id": "33e17efd-5582-48be-85de-af456fbf1777",
+"prompt": ""
+} ],
+"type": "responses"
+},
+"9872c15c-13d5-4225-b86e-e05a3349d2e6": {
+"character": "Nathan",
+"dialogue": "Options can be preceded with a condition that it will need to pass in order to be included in the list.",
+"go_to_node_id": "",
+"id": "9872c15c-13d5-4225-b86e-e05a3349d2e6",
+"next_node_id": "948ea8bd-32d7-4fa4-b0e8-fe7870f06622",
+"type": "dialogue"
+},
+"a960a734-6249-44b1-92a3-8603673703b6": {
+"go_to_node_id": "",
+"id": "a960a734-6249-44b1-92a3-8603673703b6",
+"mutation": "coco_stand",
+"next_node_id": "d77ec0c5-ab9f-4ef8-baed-8986793ebf02",
+"type": "mutation"
+},
+"d56d2df9-ce34-4552-b4b8-11bb5b65bb2d": {
+"go_to_node_id": "",
+"id": "d56d2df9-ce34-4552-b4b8-11bb5b65bb2d",
+"mutation": "last_saw = options",
+"next_node_id": "e4e41a94-c716-49f1-9b31-51f5897832ad",
+"type": "mutation"
+},
+"d77ec0c5-ab9f-4ef8-baed-8986793ebf02": {
+"id": "d77ec0c5-ab9f-4ef8-baed-8986793ebf02",
+"responses": [ {
+"next_node_id": "33e17efd-5582-48be-85de-af456fbf1777",
+"prompt": ""
+} ],
+"type": "responses"
+},
+"e09e507a-834b-45f9-8bc0-3c46ed1b1361": {
+"go_to_node_id": "",
+"id": "e09e507a-834b-45f9-8bc0-3c46ed1b1361",
+"mutation": "last_saw = dialogue",
+"next_node_id": "8954b340-054c-4b1f-979a-c13c711b70c6",
+"type": "mutation"
+},
+"e4e41a94-c716-49f1-9b31-51f5897832ad": {
+"character": "Nathan",
+"dialogue": "Response options are how we determine which dialogue gets shown next.",
+"go_to_node_id": "",
+"id": "e4e41a94-c716-49f1-9b31-51f5897832ad",
+"next_node_id": "9872c15c-13d5-4225-b86e-e05a3349d2e6",
+"type": "dialogue"
+}
+}

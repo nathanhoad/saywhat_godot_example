@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://dialogue.gd" type="Script" id=1]
+[ext_resource path="res://Ubuntu-R.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=2]
+size = 12
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 12
+font_data = ExtResource( 2 )
+
+[node name="Dialogue" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 384, 100 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Button" type="Label" parent="."]
+margin_left = -114.0
+margin_top = 33.0
+margin_right = -76.0
+margin_bottom = 47.0
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+custom_fonts/font = SubResource( 2 )
+text = "Next"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dialogue" type="RichTextLabel" parent="."]
+modulate = Color( 0.407843, 0.780392, 1, 1 )
+margin_left = 11.0
+margin_top = 11.0
+margin_right = 374.0
+margin_bottom = 63.0
+size_flags_vertical = 3
+custom_fonts/normal_font = SubResource( 1 )
+text = "This is some text.
+line2
+line3"
+fit_content_height = true
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Responses" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 115.0
+margin_right = -10.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

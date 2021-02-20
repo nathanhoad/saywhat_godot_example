@@ -1,0 +1,9 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Project
+/.import
+/.mono
+export_presets.cfg
+*.translation
