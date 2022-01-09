@@ -9,25 +9,13 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Object",
-"class": "DialogueLine",
-"language": "GDScript",
-"path": "res://addons/saywhat_godot/dialogue_line.gd"
-}, {
 "base": "Resource",
 "class": "DialogueResource",
 "language": "GDScript",
 "path": "res://addons/saywhat_godot/dialogue_resource.gd"
-}, {
-"base": "Object",
-"class": "DialogueResponse",
-"language": "GDScript",
-"path": "res://addons/saywhat_godot/dialogue_response.gd"
 } ]
 _global_script_class_icons={
-"DialogueLine": "",
-"DialogueResource": "",
-"DialogueResponse": ""
+"DialogueResource": ""
 }
 
 [application]
